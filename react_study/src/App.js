@@ -1,27 +1,21 @@
-
 import React from 'react';
-import {Component} from 'react';
+import { Component } from 'react';
 import './style.css';
+import TOC from './components/TOC';
+import Content from './components/Content';
+import Subject from './components/Subject'
 
-class Subject extends Component {
-  render () {
-    return (
-      <header>
-        <h1>WEB1</h1>
-        World Wide Web!
-      </header> // 주의점! 항상 닫히는..최상위 태그가 존재해야함
-    );
-    }
-} //요부분을 잘 봐라! 요게 컴포넌트! 
 
 class App extends Component {
-  render () {
-    return (
-      <div className='App'>
-        <Subject></Subject>
-      </div>
-    )
-  }
+	render() {
+		return (
+			<div className="App">
+				<Subject title="WEB" sub="world wide web!!!boom!"></Subject>
+				<TOC></TOC>
+				<Content title="HTML" desc="HTML is HyperText Markup Language."></Content>
+			</div>
+		);
+	}
 }
 
-export default App ;
+export default App;
