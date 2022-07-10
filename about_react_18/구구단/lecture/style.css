@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'EarlyFontDiary';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EarlyFontDiary.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  text-transform: uppercase;
+  font-family: 'EarlyFontDiary';
+  font-size: 62.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #302303;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+html button,
+body button {
+  border: none;
+  font-family: inherit;
+}
+
+html input,
+body input {
+  font-family: inherit;
+}
+
+.container h1 {
+  letter-spacing: .1rem;
+  font-size: 2rem;
+}
+
+.container__form {
+  width: 30rem;
+  height: 35rem;
+  border-radius: 1rem;
+  background: gainsboro;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form--input {
+  padding: 1.5rem;
+  border: none;
+  border-radius: .5rem;
+  font-size: 2rem;
+  -webkit-box-shadow: 0rem 3rem 4rem rgba(169, 169, 169, 0.805);
+          box-shadow: 0rem 3rem 4rem rgba(169, 169, 169, 0.805);
+}
+
+.form--submit {
+  padding: 2rem;
+  border-radius: .5rem;
+  -webkit-box-shadow: 0rem 2rem 4rem rgba(169, 169, 169, 0.805);
+          box-shadow: 0rem 2rem 4rem rgba(169, 169, 169, 0.805);
+}
+
+.form--result {
+  font-size: 2rem;
+}
