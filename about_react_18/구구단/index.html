@@ -74,7 +74,48 @@
 
     // use React Hooks
     // 조금 더 느릴수는 있다 . .  state 바뀔 때 함수부분이 재랜더링 되기때문에
-  
+    const GuguDan = () => {
+      //state 선언! use Desturing! 
+      const [first, setFrist] = React.useState(Math.ceil(Math.random() * 9))
+      const [second, setSecond] = React.useState(Math.ceil(Math.random() * 9))
+      const [value, setValue] = React.useState('');
+      const [result, setResult] = React.useState('');
+      const onRefInput = React.useRef(null);
+      // useState -> Hooks
+
+      const handle = () => {
+        onRefInput.current.focus()
+      }
+
+      const onChangeInput = (e) => {
+        setValue(e.target.value);
+      }
+
+      const onSubmitForm = (e) => {
+        e.preventDefault();
+        if (parseInt(value) === first * second) {
+          setResult(`정답은 ${value}`);
+          setFrist(Math.ceil(Math.random() * 9));
+          setSecond(Math.ceil(Math.random() * 9));
+          setValue('');
+        } else {
+          setResult(`땡! 정답은 ${first * second} 지롱!`)
+          setValue('');
+        }
+      };
+
+      return (
+        <div>
+          <div>{first} 곱하기 {second}는?</div>
+          <form onSubmit={onSubmitForm}>
+            <input ref={onRefInput} onChange={onChangeInput} value={value} type="Number" />
+            <button type="submit" onClick={handle}>SUBMIT</button>
+          </form>
+          <div id="result">{result}</div>
+        </div>
+      )
+   }
+   
   </script>
   <script type="text/babel">
     ReactDOM.render(<GuguDan />, document.querySelector('#root'));
