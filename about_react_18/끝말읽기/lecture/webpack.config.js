@@ -26,9 +26,6 @@ module.exports = {
 			},
 		],
 	},
-	plugins: [
-		new webpack.loaderOptionsPlugin({ debug: true }),
-	],
 	output: {
 		path: path.join(__dirname, 'dist'), //현재폴더안의 dist! path! 적극적으로 쓰기
 		filename: 'app.js',

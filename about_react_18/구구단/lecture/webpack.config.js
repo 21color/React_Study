@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
 	//어떤것을 위한 웹팩인지
-	name: 'word-relay-setting',
+	name: 'Gugudan',
 	mode: 'development', //실서비스에선 production
 	devtool: 'eval',
 	resolve: {
