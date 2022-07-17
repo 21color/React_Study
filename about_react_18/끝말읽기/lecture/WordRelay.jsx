@@ -38,11 +38,11 @@ class WordRelay extends Component {
 		return (
 			<div>
 				<h1>{this.state.word}</h1>
-				<from onSubmit={this.onSubmitForm}>
+				<form onSubmit={this.onSubmitForm}>
 					<input ref={this.onRefInput} value={this.state.value} onChange={this.onChangeInput}/>
 					{/* form 데이터 넣을땐 value와 onchange 를 함께 넣어줘야한다. 그렇지 않기 위해선 defailt value 를 넣어주어야한다.*/}
-					<button>입력</button>
-				</from>
+					<button>입력!</button>
+				</form>
 				<div>{this.state.result}</div>
 			</div>
 		);

@@ -1,3 +1,4 @@
+const ReactRefreshPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -20,14 +21,31 @@ module.exports = {
 				test: /\.jsx?/,
 				loader: 'babel-loader',
 				options: {
-					presets: ['@babel/preset-env', '@babel/preset-react'],
-					plugins: ['@babel/plugin-proposal-class-properties'],
-				},
+					presets: [
+						['@babel/preset-env', {
+							targets: {
+								browsers: ['> 1% in KR'],
+							},
+							debug: true,
+						}],
+						'@babel/preset-react',
+					],
+					plugins: [
+					'@babel/plugin-proposal-class-properties',
+					'react-refresh/babel',
+				],
 			},
-		],
+			}],
 	},
+	plugins: [
+		new ReactRefreshPlugin()
+	],
 	output: {
 		path: path.join(__dirname, 'dist'), //현재폴더안의 dist! path! 적극적으로 쓰기
 		filename: 'app.js',
 	}, //출력
+
+	devServer: {
+		hot: true,
+	},
 };
